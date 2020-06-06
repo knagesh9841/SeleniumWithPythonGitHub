@@ -12,7 +12,7 @@ driver = None
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--browser_name", action="store", default="chrome"
+        "--browser_name", action="store", default="Chrome"
     )
 
 

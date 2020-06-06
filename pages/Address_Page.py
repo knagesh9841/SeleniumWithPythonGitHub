@@ -179,6 +179,18 @@ class AddressPage:
             tabledata = tablerow.find_elements_by_xpath("td")
 
             fname = tabledata[0].text
+            lname = tabledata[1].text
+            city = tabledata[2].text
+            state = tabledata[3].text
+
+            MyDict = {
+                "First Name": fname,
+                "Last Name": lname,
+                "City": city,
+                "State": state
+            }
+
+            ExcelUtils.writedata("Testdata.xlsx", "Address", 3, MyDict)
 
             if fname == "Nagesh":
                 Reporter.passed(self.driver, "Address Details should be verified successfully.::Address Details is verified successfully.")
